@@ -1,5 +1,6 @@
 pipeline {
-    agent {label 'slave'}
+//     agent {label 'slave'}
+    agent any
     options {
         buildDiscarder(logRotator(numToKeepStr:'3', artifactNumToKeepStr:'3'))
     }
