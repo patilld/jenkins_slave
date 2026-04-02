@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent slave
     options {
         buildDiscarder(logRotator(numToKeepStr:'3', artifactNumToKeepStr:'3'))
     }
