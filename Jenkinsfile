@@ -8,19 +8,25 @@ pipeline {
     }
     stages {
         stage('Code compilation') {
-            echo 'Starting code compilation...'
-            sh 'mvn clean compile'
-            echo 'Code compilation completed successfully!...'
+            steps {
+                echo 'Starting code compilation...'
+                sh 'mvn clean compile'
+                echo 'Code compilation completed successfully!...'
+            }
         }
         stage('JUnit execution') {
-            echo 'Starting JUnit test execution...'
-            sh 'mvn clean test'
-            echo 'JUnit execution completed successfully!...'
+            steps {
+                echo 'Starting JUnit test execution...'
+                sh 'mvn clean test'
+                echo 'JUnit execution completed successfully!...'
+            }
         }
         stage('Build package') {
-            echo 'Creating artifact...'
-            sh 'mvn clean package -DskipTests=true'
-            echo 'Artifact created successfully!...'
+            steps {
+                echo 'Creating artifact...'
+                sh 'mvn clean package -DskipTests=true'
+                echo 'Artifact created successfully!...'
+            }
         }
     }
 }
